@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .result-box {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .churn {
+      color: #dc2626;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .not-churn {
+      color: #16a34a;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h2>Prediction Result</h2>
+    {% if prediction == "Churn" %}
+      <div class="churn">⚠️ Customer is likely to Churn</div>
+    {% else %}
+      <div class="not-churn">✅ Customer is likely to Stay</div>
+    {% endif %}
+    <a href="/">Predict Again</a>
+  </div>
+</body>
+</html>
